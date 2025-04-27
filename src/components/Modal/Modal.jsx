@@ -200,6 +200,7 @@ const Modal = ({ isOpen, onClose, onSubmitEmail }) => {
               if (updateResponse.status === "APPROVED") {
                 toast.success("Pago exitoso!");
                 localStorage.clear();
+                setTransactionStatus(null);
                 dispatch(clearCart());
                 onClose();
               }
@@ -230,6 +231,33 @@ const Modal = ({ isOpen, onClose, onSubmitEmail }) => {
         );
         if (updateResponse.status === "APPROVED") {
           toast.success("Pago exitoso!");
+          localStorage.clear();
+          setTransactionStatus(null);
+          dispatch(clearCart());
+          onClose();
+        } else {
+          throw new Error(
+            updateResponse.message || "Error al actualizar la transacción."
+          );
+        }
+      }
+
+      if (transactionDetails.data.status === "DECLINED") {
+        const formattedTransactionDetails = {
+          reference: transactionDetails.data.reference,
+          type: transactionDetails.data.payment_method.type,
+          finalized_at: transactionDetails.data.finalized_at,
+          brand: transactionDetails.data.payment_method.extra.brand,
+          id: transactionDetails.data.id,
+          status: transactionDetails.data.status,
+        };
+
+        const updateResponse = await updateTransactionDetails(
+          formattedTransactionDetails
+        );
+        if (updateResponse.status === "DECLINED") {
+          toast.error("Pago no aprobado!");
+          setTransactionStatus(null);
           localStorage.clear();
           dispatch(clearCart());
           onClose();

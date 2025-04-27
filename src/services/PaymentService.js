@@ -1,5 +1,6 @@
 import { ApiConfig } from "../utils/ApiConfig";
 
+
 export const getAcceptanceToken = async () => {
   try {
     const response = await fetch(
