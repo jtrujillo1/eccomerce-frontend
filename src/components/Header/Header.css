@@ -1,0 +1,72 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: #2C2A29;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.cart-icon {
+  fill: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.cart-icon.pulsing {
+  animation: pulse 1s infinite;
+}
+
+.cart-icon-container {
+  position: relative;
+}
+
+.notification-dot {
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
