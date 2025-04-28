@@ -1,9 +1,11 @@
 # Ecommerce Frontend Project
 
 ## Overview
+
 This is a React-based frontend application for an ecommerce platform. It provides a user interface to browse products, manage a shopping cart, and handle payments through integration with a backend API and payment gateway.
 
 ## Technologies Used
+
 - React 18
 - Redux Toolkit for state management
 - React Toastify for notifications
@@ -27,33 +29,24 @@ src/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (version 14 or higher recommended)
 - npm or yarn package manager
 
 ### Installation
+
 1. Clone the repository
 2. Run `npm install` or `yarn` to install dependencies
 
 ### Running the Application
+
 Run the following command to start the development server:
 
 ```bash
 npm run dev
 ```
 
-Open your browser and navigate to `http://localhost:3000` to view the app.
-
-## Testing
-
-The project uses Jest for testing. Currently, there is a test file located at:
-
-- `src/components/CartSidebar/cardSidebar.test.js`
-
-To run tests, use the command:
-
-```bash
-npm test
-```
+Open your browser and navigate to `https://staging.d2srhe0qsndhh4.amplifyapp.com/` to view the app.
 
 ## Key Components and Features
 
@@ -70,6 +63,7 @@ The app interacts with a backend API defined in `src/utils/ApiConfig.js`. Key se
 
 - Product fetching and cart total calculation (`ProductService.js`)
 - Payment processing and transaction management (`PaymentService.js`)
+- Order processing and transaction management (`OrderService.js`)
 
 ## Additional Information
 
