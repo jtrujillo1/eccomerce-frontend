@@ -80,3 +80,17 @@ The app interacts with a backend API defined in `src/utils/ApiConfig.js`. Key se
 ---
 
 This README provides a comprehensive overview of the project to help developers understand, run, and contribute to the ecommerce frontend application.
+
+## Continuous Integration
+
+This project can be integrated with GitHub Actions for continuous integration (CI) to automate testing and linting on each push or pull request.
+
+A sample GitHub Actions workflow configuration (`.github/workflows/ci.yml`) could include the following steps:
+
+- Checkout the repository
+- Setup Node.js environment
+- Install dependencies
+- Run tests using `npm test`
+- Run linting using `npm run lint`
+
+To enable CI, create the `.github/workflows/ci.yml` file with the above steps. This helps ensure code quality and automated testing on every code change.
